@@ -10,7 +10,28 @@ public class SW implements Serializable {
 	private String fileName;    		//파일 이름
 	private String classification; 		//분류
 	private int volume;					//파일 크기
+	private String description;         //설명
+	private String developer;			//제작자
 	
+	
+	
+	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getDeveloper() {
+		return developer;
+	}
+
+	public void setDeveloper(String developer) {
+		this.developer = developer;
+	}
+
 	public SW() {
 		super();
 	}
