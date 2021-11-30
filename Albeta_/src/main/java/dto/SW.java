@@ -9,11 +9,27 @@ public class SW implements Serializable {
 	private String SWID;       			//sw 아이디
 	private String fileName;    		//파일 이름
 	private String classification; 		//분류
-	private int volume;					//파일 크기
+	private String unitVolume;				//파일 크기
 	private String description;         //설명
 	private String developer;			//제작자
+	private String filename2;            //파일명
 	
 	
+	public String getFilename2() {
+		return filename2;
+	}
+
+	public void setFilename2(String filename2) {
+		this.filename2 = filename2;
+	}
+
+	public	String getUnitVolume() {
+		return unitVolume;
+	}
+
+	public void setUnitVolume(String unitVolume) {
+		this.unitVolume = unitVolume;
+	}
 	
 	
 	public String getDescription() {
@@ -65,14 +81,7 @@ public class SW implements Serializable {
 		this.classification = classification;
 	}
 
-	public int getVolume() {
-		return volume;
-	}
 
-	public void setVolume(int volume) {
-		this.volume = volume;
-	}
-	
 	
 	
 }

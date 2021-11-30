@@ -9,14 +9,74 @@
 <head>
 <meta charset="UTF-8">
 <title>소프트웨어 업로드</title>
+<style>
+.inputRow {
+	margin: 15px 0px;
+	display: flex;
+	align-items : center;
+}
+
+.inputRow label {
+	width : 150px;
+}
+
+.inputRow input, .inputRow textarea {
+	font-size: 1.3rem;
+}
+.inputRow input.btn {
+	font-size: 1rem;
+	padding : 5px 15px;
+}
+</style>
 </head>
 <body>
-	<jsp:include page="menu.jsp" />
-	<div class="jumbotron">
-		<div class="container">
-				<h1 class="dispaly-3">소프트웨어 업로드</h1>
+	<jsp:include page="header.jsp" />
+
+	<div class="main">
+		<div class="banner">
+			<div class="container">
+				<h1>소프트웨어 업로드</h1>
 			</div>
 		</div>
+
+		<div class="content">
+			<div class="container">
+				<form name="newSW" action="./processAddSW.jsp"
+					class="form-horizontal" method="post" enctype="multipart/form-data">
+					<div class="inputRow">
+						<label for="SWId">소프트웨어 id</label> <input type="text"
+							name="SWId" id="SWId">
+					</div>
+					<div class="inputRow">
+						<label for="fileName">소프트웨어 이름</label> <input type="text" name="fileName" id ="fileName">
+					</div>
+					<div class="inputRow">
+						<label for="unitVolume">용량</label> <input type="text" name="unitVolume" id="unitolume">
+					</div>
+					<div class="inputRow">
+						<label for="description">상세 정보</label>
+						<textarea name="description" cols="50" rows="2" id="description">
+							</textarea>
+					</div>
+					<div class="inputRow">
+						<label for="developer">제작자</label> <input type="text" name="developer" id="developer">
+					</div>
+					</div>
+					<div class="inputRow">
+						<label>분류</label> 
+						<label><input type="radio" name="Classification" value="New"> 신규 제품(게임)</label> 
+						<label><input type="radio" name="Classification" value="Old"> 중고 제품(유틸)</label>
+						<label><input type="radio" name="Classification" value="Refurbished"> 재생 제품(기타)</label>
+					</div>
+					<div class="inputRow">
+						<input type="submit" value="등록" class="btn btn-secondary">
+					</div>
+				</form>
+				<hr>
+			</div>
+		</div>
+	</div>
+
 	<jsp:include page="footer.jsp" />
 </body>
 </html>
