@@ -13,8 +13,16 @@ public class SW implements Serializable {
 	private String description;         //설명
 	private String developer;			//제작자
 	private String filename2;            //파일명
+	private int swnum;               //관심등록 개수
 	
-	
+	public int getSwnum() {
+		return swnum;
+	}
+
+	public void setSwnum(int swnum) {
+		this.swnum = swnum;
+	}
+
 	public String getFilename2() {
 		return filename2;
 	}

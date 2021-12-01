@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<scriptsrc="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
-<script type="text/javascript" src="/resource/js/bootstrap.js"></script>
-<scripttype="text/javascript"src="/resource/js/bootstrap.js"></script>
-<linkrel="stylesheet"href="/resource/css/bootstrap.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+<script type="text/javascript" src="/resources/js/bootstrap.js"></script>
+<script type="text/javascript"src="/resources/js/bootstrap.js"></script>
+<link rel="stylesheet" href="./resources/css/bootstrap.css" />
 <html>
 <head>
 <meta charset="UTF-8">
@@ -32,6 +33,7 @@
 <body>
 	<jsp:include page="header.jsp" />
 
+	<a href="logout.jsp" class="btn btn-sm btn-success pull-right">logout</a>
 	<div class="main">
 		<div class="banner">
 			<div class="container">
@@ -41,6 +43,8 @@
 
 		<div class="content">
 			<div class="container">
+			<form name="newSW" action="./processAddSW.jsp"
+					class="form-horizontal" method="post" enctype="multipart/form-data">
 				<form name="newSW" action="./processAddSW.jsp"
 					class="form-horizontal" method="post" enctype="multipart/form-data">
 					<div class="inputRow">
@@ -48,7 +52,7 @@
 							name="SWId" id="SWId">
 					</div>
 					<div class="inputRow">
-						<label for="fileName">소프트웨어 이름</label> <input type="text" name="fileName" id ="fileName">
+						<label for="FileName">소프트웨어 이름</label> <input type="text" name="FileName" id ="FileName">
 					</div>
 					<div class="inputRow">
 						<label for="unitVolume">용량</label> <input type="text" name="unitVolume" id="unitolume">
@@ -64,12 +68,17 @@
 					</div>
 					<div class="inputRow">
 						<label>분류</label> 
-						<label><input type="radio" name="Classification" value="New"> 신규 제품(게임)</label> 
-						<label><input type="radio" name="Classification" value="Old"> 중고 제품(유틸)</label>
-						<label><input type="radio" name="Classification" value="Refurbished"> 재생 제품(기타)</label>
+						<label><input type="radio" name="Classification" value="게임"> 게임</label> 
+						<label><input type="radio" name="Classification" value="유틸"> 유틸</label>
+						<label><input type="radio" name="Classification" value="기타"> 기타</label>
 					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2"> 이미지</label>
 					<div class="inputRow">
 						<input type="submit" value="등록" class="btn btn-secondary">
+						<input type="file" name="swImage" id="swImage">
+					</div>
 					</div>
 				</form>
 				<hr>

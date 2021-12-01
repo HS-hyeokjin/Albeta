@@ -15,20 +15,20 @@ public class SWRepository {
 	
 	
 	public SWRepository( ) {
-		SW mine = new SW("1","지뢰찾기");
+		SW mine = new SW("p1","지뢰찾기");
 		mine.setUnitVolume("10");
 		mine.setClassification("게임");
 		mine.setDeveloper("로버트 도너");
 		mine.setDescription("지뢰를 찾아 없애는 게임");
-		mine.setFilename2("1.png");
+		mine.setFilename2("p1");
 		
 		
-		SW kakao = new SW("2","카카오톡");
+		SW kakao = new SW("p2","카카오톡");
 		kakao.setUnitVolume("20");
 		kakao.setClassification("유틸");
 		kakao.setDeveloper("카카오");
 		kakao.setDescription("실시간으로 채팅하세요");
-		kakao.setFilename2("2.png");
+		kakao.setFilename2("p2");
 
 
 		listofSW.add(mine);
